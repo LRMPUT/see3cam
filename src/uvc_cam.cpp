@@ -50,8 +50,20 @@ enumerate_menu (int device_file_h_,
 
 	GetListofDeviceseCon();
 
-	index = ( _device[10] ) - 48;
+//	index = ( _device[10] ) - 48;
 
+    index = 0;
+    
+    for(int i = 0; i < DeviceInstances->num_devices; ++i){
+//        cout << "i = " << i << ", device = " << DeviceInstances->listVidDevices[i].device << ", product = " << DeviceInstances->listVidDevices[i].product << endl;
+        if(strcmp(_device, DeviceInstances->listVidDevices[i].device) == 0)
+        {
+            index = i;
+            break;
+        }
+    }
+//    cout << "index = " << index << endl;
+//
 //	printf("opening %s\n", _device);
 
 	if ((device_file_h_ = open(_device, O_RDWR)) == -1)

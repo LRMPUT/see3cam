@@ -44,6 +44,7 @@ catkin_package(
 
 include_directories(
 	include
+	src/xunit
 	${catkin_INCLUDE_DIRS}
 	${CMAKE_SOURCE_DIR}/../src/see3cam/src/xunit
 	${GLIB_INCLUDE_DIRS}
